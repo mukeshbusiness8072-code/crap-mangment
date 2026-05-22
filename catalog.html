@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1b4332" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>All Products – MV Mukesh Vanitha</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/src/css/variables.css" />
+    <link rel="stylesheet" href="/src/css/layout.css" />
+    <link rel="stylesheet" href="/src/css/components.css" />
+    <link rel="stylesheet" href="/src/css/mobile.css" />
+    <link rel="icon" href="/images/logo-mv-organic.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/logo-mv-organic.png" />
+  </head>
+  <body>
+    <div class="announcement"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/catalog.html" class="logo"></a>
+
+        <nav class="main-nav" aria-label="Main">
+          <a href="/catalog.html" class="nav-link nav-link--plain">Home</a>
+          <a href="/catalog.html" class="nav-link nav-link--plain">Shop All (325)</a>
+          <div class="nav-item">
+            <button type="button" class="nav-link">Seeds <i class="fa-solid fa-angle-down"></i></button>
+            <div class="mega-menu">
+              <a href="/catalog.html?q=seeds">Organic seeds</a>
+              <a href="/catalog.html?q=vegetable">Vegetable Seeds</a>
+              <a href="/catalog.html?q=flower">Flower Seeds</a>
+              <a href="/catalog.html?q=herb">Herb Seeds</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <button type="button" class="nav-link">Garden <i class="fa-solid fa-angle-down"></i></button>
+            <div class="mega-menu">
+              <a href="/catalog.html?q=grow+bag">Grow Bags</a>
+              <a href="/catalog.html?q=manure">Organic Manure</a>
+              <a href="/catalog.html?q=sapling">Saplings</a>
+              <a href="/catalog.html?q=tools">Garden Tools</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <button type="button" class="nav-link">Others <i class="fa-solid fa-angle-down"></i></button>
+            <div class="mega-menu">
+              <a href="/catalog.html?q=millet">Millets/Rice</a>
+              <a href="/catalog.html?q=food">Food</a>
+              <a href="/catalog.html?q=package">Packages</a>
+            </div>
+          </div>
+        </nav>
+
+        <form class="header-search" role="search" action="/search.html" method="get">
+          <input type="search" name="q" placeholder="Search products..." aria-label="Search" />
+          <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <div class="header-actions">
+          <a href="#" class="icon-btn" aria-label="Account"><i class="fa-regular fa-user"></i> Login</a>
+          <button type="button" class="icon-btn cart-trigger" aria-label="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="cart-total-text">Rs. 0.00</span>
+          </button>
+          <button type="button" class="menu-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile">
+          <a href="/catalog.html">Home / Shop All</a>
+          <a href="/catalog.html?q=seeds">Seeds</a>
+          <a href="/catalog.html?q=vegetable">Vegetable Seeds</a>
+          <a href="/catalog.html?q=sapling">Saplings</a>
+          <a href="/catalog.html?q=manure">Manure</a>
+          <a href="/catalog.html?q=grow+bag">Grow Bags</a>
+          <a href="/search.html?q=brinjal">Brinjal</a>
+          <a href="/checkout.html">Checkout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="search-page">
+      <div class="container">
+        <header class="search-header">
+          <h1 id="page-heading">All Products</h1>
+          <p class="result-count"><span id="result-count">325 results</span></p>
+        </header>
+
+        <button type="button" class="filter-mobile-btn"><i class="fa-solid fa-sliders"></i> Filter</button>
+        <div class="filter-backdrop"></div>
+
+        <div class="search-layout">
+          <aside class="filters-sidebar">
+            <h3>Filter</h3>
+            <div class="filter-group">
+              <h4>Availability</h4>
+              <label><input type="checkbox" id="filter-in-stock" /> In stock <span class="filter-count" id="stock-in-count">0</span></label>
+              <label><input type="checkbox" id="filter-out-stock" /> Out of stock <span class="filter-count" id="stock-out-count">0</span></label>
+            </div>
+            <div class="filter-group">
+              <h4>Price</h4>
+              <div class="price-range">
+                <div class="price-labels">
+                  <span id="price-min-label">Rs. 0</span>
+                  <span id="price-max-label">Rs. 21,000</span>
+                </div>
+                <input type="range" id="price-range" min="0" max="21000" value="21000" step="100" />
+              </div>
+            </div>
+          </aside>
+
+          <div class="search-main">
+            <div class="search-toolbar">
+              <div class="sort-control">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by" aria-label="Sort products">
+                  <option value="relevance">Relevance</option>
+                  <option value="price-asc">Price, low to high</option>
+                  <option value="price-desc">Price, high to low</option>
+                </select>
+              </div>
+            </div>
+            <div id="product-grid" class="product-grid" aria-live="polite"></div>
+            <div id="pagination"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Info</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Need Help?</h4>
+            <p>Sales : <span data-site-phone></span></p>
+            <p>Mail : <span data-site-email></span></p>
+          </div>
+        </div>
+        <p class="footer-bottom"></p>
+      </div>
+    </footer>
+
+    <div id="welcome-popup" class="welcome-popup" role="dialog" aria-label="Welcome">
+      <div class="welcome-popup__inner">
+        <button type="button" class="welcome-close" aria-label="Close">&times;</button>
+        <h2>Welcome</h2>
+        <p>Aadi sale — Use coupon code <strong>AADI15</strong> during checkout</p>
+      </div>
+    </div>
+
+    <div id="quick-view-modal" class="qv-modal" aria-hidden="true">
+      <div class="qv-backdrop"></div>
+      <div class="qv-panel" role="dialog" aria-label="Quick view">
+        <button type="button" class="qv-close" aria-label="Close">&times;</button>
+        <img class="qv-image" src="" alt="" />
+        <h3 class="qv-title"></h3>
+        <p class="qv-price"></p>
+        <button type="button" id="qv-add-cart" class="btn-product btn-product--add">Add to cart</button>
+        <a class="qv-link btn-product" href="#" target="_blank" rel="noopener">View on store</a>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/catalog.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #2d6a4f;
+  --color-primary-dark: #1b4332;
+  --color-accent: #40916c;
+  --color-sale: #c1121f;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-border: #e5e5e5;
+  --color-bg: #fff;
+  --color-bg-soft: #f7f7f7;
+  --color-announce: #1b4332;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --header-height: 72px;
+  --max-width: 1400px;
+  --radius: 4px;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --transition: 0.2s ease;
+}
