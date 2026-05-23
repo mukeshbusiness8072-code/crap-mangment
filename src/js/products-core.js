@@ -28,7 +28,7 @@ export function matchesQuery(product, query) {
 }
 
 export async function loadAllProducts() {
-  const res = await fetch('. /data/all-products.json')
+  const res = await fetch('./data/all-products.json');
   if (!res.ok) throw new Error('Failed to load all-products.json');
   const data = await res.json();
   return data.products;
